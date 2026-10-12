@@ -63,3 +63,46 @@ a { color: inherit; }
 .btn-ghost:hover { background: var(--white); color: var(--ink); }
 .btn-outline-main { border-color: var(--cobalt); color: var(--cobalt); width: 100%; }
 .btn-outline-main:hover { background: var(--cobalt); color: var(--white); }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  background: var(--ink);
+  color: var(--white);
+  transition: box-shadow 0.2s;
+}
+.site-header.scrolled { box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3); }
+ 
+.nav-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+.brand {
+  font-size: 1.9rem;
+  text-decoration: none;
+  color: var(--white);
+}
+.brand span { color: var(--plate); }
+ 
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+.nav-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-link:hover { color: var(--white); }
+.nav-link.active { color: var(--white); border-bottom-color: var(--plate); }
+.nav-cta { padding: 0.55rem 1.1rem; }
+ 
