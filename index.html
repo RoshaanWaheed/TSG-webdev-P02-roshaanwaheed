@@ -237,3 +237,48 @@
       </div>
     </section>
  
+      <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Book your free trial</h2>
+          <p>Fill in the form and we'll message you within one working day.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-lg-6">
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+                <small class="error" id="nameError"></small>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+                <small class="error" id="emailError"></small>
+              </div>
+              <div class="field">
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+              <div class="field">
+                <label for="message">What are you training for?</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <small class="error" id="messageError"></small>
+              </div>
+              <button type="submit" class="btn-main">Send request</button>
+              <p class="form-status" id="formStatus" role="status"></p>
+            </form>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="map-wrap">
+              <iframe
+                title="IronPeak Fitness location map"
+                src="https://www.google.com/maps?q=F-7+Markaz+Islamabad&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
