@@ -136,13 +136,12 @@ const header = document.getElementById('siteHeader');
     const messageOk = setError('message', message.length < 10 ? 'Tell us a little more (at least 10 characters).' : '');
  
     if (nameOk && emailOk && messageOk) {
-      // No backend in this project, so we only show a confirmation.
+  
       status.textContent = 'Thanks ' + name.split(' ')[0] + '! We will contact you within one working day.';
       form.reset();
     }
   });
  
-  // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
  
 });
