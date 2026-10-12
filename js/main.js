@@ -35,3 +35,18 @@ const header = document.getElementById('siteHeader');
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+   const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+ 
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+ 
+  sections.forEach(section => observer.observe(section));
