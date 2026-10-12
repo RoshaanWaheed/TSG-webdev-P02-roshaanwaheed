@@ -58,7 +58,7 @@ const header = document.getElementById('siteHeader');
   const dotsWrap = document.getElementById('sliderDots');
   let current = 0;
  
-  // Create one dot per slide
+  
   const dots = [];
   for (let i = 0; i < slides.length; i++) {
     const dot = document.createElement('button');
@@ -70,7 +70,7 @@ const header = document.getElementById('siteHeader');
   }
  
   function goTo(index) {
-    // Wrap around at both ends
+    
     current = (index + slides.length) % slides.length;
     track.style.transform = 'translateX(-' + current * 100 + '%)';
     dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
@@ -79,7 +79,7 @@ const header = document.getElementById('siteHeader');
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
  
-  // Swipe support for touch screens
+ 
   let touchStartX = 0;
   track.addEventListener('touchstart', e => {
     touchStartX = e.changedTouches[0].clientX;
@@ -90,3 +90,24 @@ const header = document.getElementById('siteHeader');
   }, { passive: true });
  
   goTo(0);
+
+  const faqButtons = document.querySelectorAll('.faq-q');
+ 
+  function closeItem(button) {
+    button.setAttribute('aria-expanded', 'false');
+    button.nextElementSibling.style.maxHeight = null;
+  }
+ 
+  faqButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+ 
+      faqButtons.forEach(closeItem); // close everything first
+ 
+      if (!isOpen) {
+        const answer = button.nextElementSibling;
+        button.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
