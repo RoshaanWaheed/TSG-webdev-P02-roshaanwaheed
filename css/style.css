@@ -178,3 +178,41 @@ a { color: inherit; }
   border-color: var(--cobalt);
   box-shadow: 0 14px 30px rgba(29, 78, 216, 0.14);
 }
+.plan {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  padding: 2.25rem 2rem;
+}
+.plan ul { list-style: none; padding: 0; margin: 1.5rem 0 2rem; flex: 1; }
+.plan li { padding: 0.4rem 0; display: flex; gap: 0.6rem; align-items: baseline; }
+.plan li i { color: var(--cobalt); }
+.plan li.off { color: #98a2b3; }
+.plan li.off i { color: #c0c7d1; }
+.price { font-family: 'Barlow Condensed', sans-serif; font-size: 2.6rem; font-weight: 700; margin: 0.5rem 0 0; }
+.price span { font-family: 'Barlow', sans-serif; font-size: 1rem; font-weight: 400; color: var(--muted); }
+ 
+.plan-featured {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--plate);
+  transform: scale(1.04);
+}
+.plan-featured .price span { color: rgba(255, 255, 255, 0.65); }
+.plan-featured li i { color: var(--plate); }
+.plan-featured li.off { color: rgba(255, 255, 255, 0.4); }
+.plan-badge {
+  position: absolute;
+  top: -14px;
+  left: 2rem;
+  background: var(--plate);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.9rem;
+  border-radius: 999px;
+}
