@@ -61,6 +61,10 @@ tsg-webdev-p02-roshaanwaheed/
 
 ![Lighthouse](docs/Lighthouse_Performance.PNG)
 
+## Deliverables 
+ 
+ https://drive.google.com/file/d/1z85S3ELiFiBSY2SepYwd1hEejZOCXA-R/view?usp=sharing
+
 
 ## Breakpoints
 
