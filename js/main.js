@@ -27,4 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 992) setMenu(false);
-  });
+});
+
+const header = document.getElementById('siteHeader');
+  function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
