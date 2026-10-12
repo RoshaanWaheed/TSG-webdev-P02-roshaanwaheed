@@ -216,3 +216,34 @@ a { color: inherit; }
   padding: 0.2rem 0.9rem;
   border-radius: 999px;
 }
+.slider { max-width: 780px; }
+.slider-viewport { overflow: hidden; border-radius: var(--radius); background: var(--ink); color: var(--white); }
+.slider-track { display: flex; transition: transform 0.45s ease; }
+.slide { flex: 0 0 100%; margin: 0; padding: 3rem 3rem 2.5rem; }
+.slide blockquote { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.5rem, 3.5vw, 2.1rem); line-height: 1.25; margin: 0 0 1.5rem; }
+.slide figcaption { color: rgba(255, 255, 255, 0.7); }
+.slide figcaption strong { color: var(--plate); margin-right: 0.4rem; }
+ 
+.slider-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 1.25rem; }
+.slider-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.slider-btn:hover { background: var(--ink); color: var(--white); }
+.slider-dots { display: flex; gap: 0.6rem; }
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  background: #b9c2cf;
+  cursor: pointer;
+}
+.dot.active { background: var(--cobalt); transform: scale(1.25); }
