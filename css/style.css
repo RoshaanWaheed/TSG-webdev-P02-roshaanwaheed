@@ -1,0 +1,43 @@
+:root {
+  --ink: #0e1a2b;        
+  --concrete: #e9edf1;   
+  --white: #ffffff;
+  --cobalt: #1d4ed8;  
+  --cobalt-dark: #173db0;
+  --plate: #ffb703;     
+  --muted: #55627a;
+  --radius: 10px;
+  --header-h: 72px;
+}
+ 
+* { box-sizing: border-box; }
+ 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h); 
+}
+ 
+body {
+  font-family: 'Barlow', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+  margin: 0;
+}
+ 
+h1, h2, h3, h4, .brand {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+ 
+h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
+h3 { font-size: 1.6rem; }
+ 
+a { color: inherit; }
+ 
+:focus-visible {
+  outline: 3px solid var(--plate);
+  outline-offset: 3px;
+}
