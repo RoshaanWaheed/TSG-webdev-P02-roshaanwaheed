@@ -111,3 +111,39 @@ const header = document.getElementById('siteHeader');
       }
     });
   });
+
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+ 
+  function setError(fieldId, message) {
+    const input = document.getElementById(fieldId);
+    document.getElementById(fieldId + 'Error').textContent = message;
+    input.classList.toggle('invalid', message !== '');
+    return message === '';
+  }
+ 
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    status.textContent = '';
+ 
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+ 
+    const nameOk = setError('name', name.length < 2 ? 'Please enter your full name.' : '');
+    const emailOk = setError('email', emailPattern.test(email) ? '' : 'Enter a valid email, like name@example.com.');
+    const messageOk = setError('message', message.length < 10 ? 'Tell us a little more (at least 10 characters).' : '');
+ 
+    if (nameOk && emailOk && messageOk) {
+      // No backend in this project, so we only show a confirmation.
+      status.textContent = 'Thanks ' + name.split(' ')[0] + '! We will contact you within one working day.';
+      form.reset();
+    }
+  });
+ 
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+ 
+});
+ 
