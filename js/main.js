@@ -50,3 +50,43 @@ const header = document.getElementById('siteHeader');
   }, { rootMargin: '-45% 0px -50% 0px' });
  
   sections.forEach(section => observer.observe(section));
+
+   const track = document.getElementById('sliderTrack');
+  const slides = track.children;
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsWrap = document.getElementById('sliderDots');
+  let current = 0;
+ 
+  // Create one dot per slide
+  const dots = [];
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'dot';
+    dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+    dots.push(dot);
+  }
+ 
+  function goTo(index) {
+    // Wrap around at both ends
+    current = (index + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + current * 100 + '%)';
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+  }
+ 
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+ 
+  // Swipe support for touch screens
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].clientX;
+  }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(diff) > 50) goTo(diff < 0 ? current + 1 : current - 1);
+  }, { passive: true });
+ 
+  goTo(0);
