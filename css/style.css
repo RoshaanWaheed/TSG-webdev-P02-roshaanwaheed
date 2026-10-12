@@ -247,3 +247,26 @@ a { color: inherit; }
   cursor: pointer;
 }
 .dot.active { background: var(--cobalt); transform: scale(1.25); }
+
+.accordion-list { max-width: 780px; }
+.faq-item { background: var(--white); border-radius: var(--radius); margin-bottom: 0.75rem; overflow: hidden; }
+.faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.5rem;
+  border: 0;
+  background: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+}
+.faq-q i { color: var(--cobalt); transition: transform 0.3s; flex-shrink: 0; }
+.faq-q[aria-expanded="true"] i { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-a p { margin: 0; padding: 0 1.5rem 1.25rem; color: var(--muted); }
